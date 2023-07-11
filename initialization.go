@@ -35,5 +35,7 @@ func InitializationManager(ID string) *Manager {
 	newManager.BroadCastMessage = make(chan *BroadCastMessageData)
 	newManager.Close = make(chan int)
 
+	go newManager.Run()
+
 	return newManager
 }
