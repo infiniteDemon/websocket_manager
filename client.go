@@ -33,11 +33,11 @@ func (c Client) Write() {
 	for true {
 		select {
 		case msg := <-c.Message:
-			log.Printf("send msg success, msg body is %s", string(msg))
 			if err := c.Conn.WriteMessage(TextMessage, msg); err != nil {
 				log.Println(err)
 				return
 			}
+			log.Printf("send msg success, msg body is %s", string(msg))
 		}
 	}
 }
