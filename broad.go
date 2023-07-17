@@ -7,3 +7,10 @@ type BroadCastMessageData struct {
 	IsBroadCast bool
 	ClientIDs   []string
 }
+
+// ping and pong
+type PingPongMsg struct {
+	Id      string `json:"id"`
+	Message string `json:"message"`
+	Alias   string `json:"alias"` // 别名
+}
